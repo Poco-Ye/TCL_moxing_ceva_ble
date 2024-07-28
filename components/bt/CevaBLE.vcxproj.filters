@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="ip\host\profiles\hogp\api\hids.h" />
+    <ClInclude Include="ip\ll\ble\src\llc\llc_int.h" />
+    <ClInclude Include="ip\ll\ble\src\llc\llc_llcp.h" />
+    <ClInclude Include="ip\ll\ble\src\lld\lld_int.h" />
+    <ClInclude Include="ip\ll\ble\src\lld\lld_int_iso.h" />
+    <ClInclude Include="ip\ll\ble\src\llm\llm_int.h" />
+    <ClInclude Include="ip\ll\ble\src\ble_util.h" />
+    <ClInclude Include="ip\ll\ble\src\ble_util_buf.h" />
+    <ClInclude Include="ip\ll\ble\src\llc.h" />
+    <ClInclude Include="ip\ll\ble\src\lld.h" />
+    <ClInclude Include="ip\ll\ble\src\llm.h" />
+    <ClInclude Include="ip\ll\ble\api\em_map_ble.h" />
+    <ClInclude Include="ip\ll\ble\api\rwble.h" />
+    <ClInclude Include="ip\ll\ble\api\rwble_config.h" />
+    <ClInclude Include="ip\ll\em\api\em_map.h" />
+    <ClInclude Include="ip\ll\sch\api\sch_alarm.h" />
+    <ClInclude Include="ip\ll\sch\api\sch_arb.h" />
+    <ClInclude Include="ip\ll\sch\api\sch_plan.h" />
+    <ClInclude Include="ip\ll\sch\api\sch_prog.h" />
+    <ClInclude Include="ip\ll\sch\api\sch_slice.h" />
+    <ClInclude Include="ip\ll\ble\src\lli.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ip\ll\ble\src\co\ble_util.c" />
+    <ClCompile Include="ip\ll\ble\src\co\ble_util_buf.c" />
+    <ClCompile Include="ip\ll\ble\src\co\rwble.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_chmap_upd.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_cis.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_clk_acc.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_con_upd.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_cte.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_dbg.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_disconnect.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_dl_upd.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_encrypt.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_feat_exch.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_hci.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_le_ping.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_llcp.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_past.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_phy_upd.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_pwr.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_task.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_ver_exch.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld_adv.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld_bi.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld_ci.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld_con.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld_init.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld_iso.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld_isoal.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld_per_adv.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld_scan.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld_sync.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld_test.c" />
+    <ClCompile Include="ip\ll\ble\src\llm\llm.c" />
+    <ClCompile Include="ip\ll\ble\src\llm\llm_adv.c" />
+    <ClCompile Include="ip\ll\ble\src\llm\llm_hci.c" />
+    <ClCompile Include="ip\ll\ble\src\llm\llm_init.c" />
+    <ClCompile Include="ip\ll\ble\src\llm\llm_scan.c" />
+    <ClCompile Include="ip\ll\ble\src\llm\llm_task.c" />
+    <ClCompile Include="ip\ll\ble\src\llm\llm_test.c" />
+    <ClCompile Include="ip\ll\sch\src\sch_alarm.c" />
+    <ClCompile Include="ip\ll\sch\src\sch_arb.c" />
+    <ClCompile Include="ip\ll\sch\src\sch_plan.c" />
+    <ClCompile Include="ip\ll\sch\src\sch_prog.c" />
+    <ClCompile Include="ip\ll\sch\src\sch_slice.c" />
+    <ClCompile Include="vtPatch\JumpTable.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld_ch_scan.c" />
+    <ClCompile Include="ip\ll\ble\src\llm\llm_ch_scan.c" />
+  </ItemGroup>
+</Project>

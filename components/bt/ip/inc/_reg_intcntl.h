@@ -1,0 +1,10 @@
+#ifndef __REG_INTCNTL_H_
+#define __REG_INTCNTL_H_
+
+#define REG_INTCNTL_SIZE 68
+
+#define REG_INTCNTL_BASE_ADDR 0x00400000
+
+
+#endif // __REG_INTCNTL_H_
+

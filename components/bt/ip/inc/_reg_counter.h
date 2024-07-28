@@ -1,0 +1,10 @@
+#ifndef __REG_COUNTER_H_
+#define __REG_COUNTER_H_
+
+#define REG_COUNTER_SIZE 16
+
+#define REG_COUNTER_BASE_ADDR 0x00404000
+
+
+#endif // __REG_COUNTER_H_
+

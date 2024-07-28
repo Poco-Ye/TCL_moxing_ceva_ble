@@ -1,0 +1,236 @@
+########################################################################################
+#
+# @file SCompile
+#
+# @brief Compilation instructions for Profiles
+#
+# Copyright (C) RivieraWaves 2019-2020
+#
+#########################################################################################
+
+if (env['BLE_HOST_PRESENT'] == "on") or (env['BT_HOST_PRESENT'] == "on"):
+    
+    # Add profile definitions
+    prf_dir       = profiles_dir
+    prf_src_dir   = prf_dir
+    prf_def_list  = []
+    prf_inc_list  = []
+    prf_src_list  = []
+
+    def profile_import(env, host_configuration, name, abs_path, flag = None):
+        """Import sourcelist and includelist from profiles"""
+        # global variable used by function
+        global prf_def_list 
+        global prf_inc_list 
+        global prf_src_list 
+        global prf_dir
+        
+        host_supported = True
+
+        if host_configuration in ['BLE', 'BTDM']:
+            host_supported = host_supported if env['BLE_HOST_PRESENT'] == 'on' else False
+
+        if host_configuration in ['BT', 'BTDM']:
+            host_supported = host_supported if env['BT_HOST_PRESENT'] == 'on' else False
+
+        name = name.lower()
+        abs_path = abs_path.lower()
+        if (abs_path == 'dbg'):
+            abs_path = join(abs_path, name)
+         
+        flag = name.upper() if(flag == None) else flag.upper()
+
+        if (host_supported and env[flag] == 'on'):
+            # check if profile present
+            if(not os.path.exists(join(prf_dir, abs_path))):
+                env[flag] == 'off' # Force environment
+                print "Warning: %s profile not available, it will not be compiled" % (name)
+            else:           
+                # Mark include profile utils
+                env['PROFILES'] = 'on'
+    
+                # include profile source and API
+                prf_def_list += ['CFG_%s%s' % ("PRF_" if (name != "") else "", flag)]
+                
+                
+                api_path = join(prf_dir, abs_path, 'api')
+                if (api_path not in prf_inc_list):
+                    prf_inc_list += [api_path]
+                
+                src_list = scutils.file_list_read(env, join(prf_dir, abs_path, 'sourcelist.txt'), join(abs_path, 'src'))
+                for src_path in src_list:
+                    if (src_path not in prf_src_list):
+                        prf_src_list += [src_path]
+                        
+                if(os.path.exists(join(prf_dir, abs_path, 'SAdditions'))):
+                    # execute SAdditions Script
+                    exec scutils.load_script(join(prf_dir, abs_path, 'SAdditions'))
+        else:
+            env[flag] = 'off'
+            
+    
+    ############################################################################  
+    # BT Low Energy Profiles
+
+    # proximity
+    profile_import(env, 'BLE', 'PROXM', 'PROX', 'PXPM')
+    profile_import(env, 'BLE', 'PROXR', 'PROX', 'PXPR')
+    
+    # find me
+    profile_import(env, 'BLE', 'FINDL', 'FIND', 'FMPL')
+    profile_import(env, 'BLE', 'FINDT', 'FIND', 'FMPT')
+    
+    # health thermometer
+    profile_import(env, 'BLE', 'HTPC', 'HTP')
+    profile_import(env, 'BLE', 'HTPT', 'HTP')
+    
+    # device information service
+    profile_import(env, 'BLE', 'DISC', 'DIS')
+    profile_import(env, 'BLE', 'DISS', 'DIS')
+    
+    # Blood pressure
+    profile_import(env, 'BLE', 'BLPC', 'BLP')
+    profile_import(env, 'BLE', 'BLPS', 'BLP')
+    
+    # Heart Rate
+    profile_import(env, 'BLE', 'HRPC', 'HRP')
+    profile_import(env, 'BLE', 'HRPS', 'HRP')
+    
+    # time
+    profile_import(env, 'BLE', 'TIPC', 'TIP')
+    profile_import(env, 'BLE', 'TIPS', 'TIP')
+    
+    # Scan parameters
+    profile_import(env, 'BLE', 'SCPPC', 'SCPP')
+    profile_import(env, 'BLE', 'SCPPS', 'SCPP')
+    
+    # Battery service
+    profile_import(env, 'BLE', 'BASC', 'BAS')
+    profile_import(env, 'BLE', 'BASS', 'BAS')
+    
+    # HID
+    profile_import(env, 'BLE', 'HOGPD', 'HOGP')
+    profile_import(env, 'BLE', 'HOGPBH', 'HOGP')
+    profile_import(env, 'BLE', 'HOGPRH', 'HOGP')
+    
+    # Glucose
+    profile_import(env, 'BLE', 'GLPC', 'GLP')
+    profile_import(env, 'BLE', 'GLPS', 'GLP')
+    
+    # running speed and cadence
+    profile_import(env, 'BLE', 'RSCPC', 'RSCP')
+    profile_import(env, 'BLE', 'RSCPS', 'RSCP')
+    
+    # cycle speed and cadence
+    profile_import(env, 'BLE', 'CSCPC', 'CSCP')
+    profile_import(env, 'BLE', 'CSCPS', 'CSCP')
+    
+    # cycle power
+    profile_import(env, 'BLE', 'CPPC', 'CPP')
+    profile_import(env, 'BLE', 'CPPS', 'CPP')
+    
+    # Localization profile
+    profile_import(env, 'BLE', 'LANC', 'LAN')
+    profile_import(env, 'BLE', 'LANS', 'LAN')
+    
+    # Alert Notification
+    profile_import(env, 'BLE', 'ANPC', 'ANP')
+    profile_import(env, 'BLE', 'ANPS', 'ANP')
+    
+    # Phone Alert
+    profile_import(env, 'BLE', 'PASPC', 'PASP')
+    profile_import(env, 'BLE', 'PASPS', 'PASP')
+    
+    # Internet Protocol Support
+    profile_import(env, 'BLE', 'IPSS', 'IPSP')
+    profile_import(env, 'BLE', 'IPSC', 'IPSP')
+    
+    # Environmental Sensing
+    profile_import(env, 'BLE', 'ENVS', 'ENVP')
+    profile_import(env, 'BLE', 'ENVC', 'ENVP')
+    
+    # Weight Scale
+    profile_import(env, 'BLE', 'WSCS', 'WSCP')
+    profile_import(env, 'BLE', 'WSCC', 'WSCP')
+    
+    # Body Composition
+    profile_import(env, 'BLE', 'BCSS', 'BCS')
+    profile_import(env, 'BLE', 'BCSC', 'BCS')
+    
+    # User Data Service
+    profile_import(env, 'BLE', 'UDSS', 'UDS')
+    profile_import(env, 'BLE', 'UDSC', 'UDS')
+    
+    # Wireless Power Transfer Profile
+    profile_import(env, 'BLE', 'WPTS', 'WPTP')
+    profile_import(env, 'BLE', 'WPTC', 'WPTP')
+    
+    # Pulse Oximeter Profile
+    profile_import(env, 'BLE', 'PLXS', 'PLXP')
+    profile_import(env, 'BLE', 'PLXC', 'PLXP')
+    
+    # Continuous Glucose Monitoring
+    profile_import(env, 'BLE', 'CGMS', 'CGMP')
+    profile_import(env, 'BLE', 'CGMC', 'CGMP')
+    
+    # Coordinated Set Identification Service
+    profile_import(env, 'BLE', 'CSISM', 'CSIP')
+    profile_import(env, 'BLE', 'CSISC', 'CSIP')
+    
+    # Object Transfer Profile
+    profile_import(env, 'BLE', 'OTS', 'OTP')
+    profile_import(env, 'BLE', 'OTC', 'OTP')
+    
+    # Throughput tester profile for debug
+    profile_import(env, 'BLE', 'THPP', 'DBG')
+        
+    # Audio Mode 0
+    profile_import(env, 'BLE', '', 'AM0', 'ISO_MODE_0')
+    
+    ############################################################################   
+    # BT Classic Profiles
+   
+    # Advanced Audio Distribution Profile - SINK
+    profile_import(env, 'BT', 'A2DP_SINK', 'A2DP')
+    # Advanced Audio Distribution Profile - SOURCE
+    profile_import(env, 'BT', 'A2DP_SOURCE', 'A2DP')
+    # Audio Video Remote Control Profile
+    profile_import(env, 'BT', 'AVRCP', 'AVRCP')
+    
+    # Hands Free Profile - Hands-Free unit
+    profile_import(env, 'BT', 'HFP_HF', 'HFP')
+    # Hands Free Profile - Audio Gateway
+    profile_import(env, 'BT', 'HFP_AG', 'HFP')
+    
+    # Phone Book Access Profile - Phone book Client Engine (PCE)
+    profile_import(env, 'BT', 'PBAP_CLIENT', 'PBAP')
+    
+    # Serial port profile
+    profile_import(env, 'BT', 'SPP', 'SPP')
+    
+    # Apple iPod Accessory Profile
+    profile_import(env, 'BT', 'APPLE_IAP', 'APPLE_IAP')
+
+    ############################################################################
+    # BT Dual Mode Profiles
+    
+    # Google Fast Pair Provider
+    profile_import(env, 'BTDM', 'GFP_PROVIDER', 'GFP')
+
+
+    ############################################################################
+    # Miscellaneous
+
+    # Enable Profiles for GAF
+    if (env['BLE_HOST_PRESENT'] == 'on') and (env['GAF'] == 'on'):
+        # Include profile utils
+        env['PROFILES'] = 'on'
+
+    if(env['PROFILES'] == 'on'):
+        prf_def_list += ['CFG_PRF']
+        prf_def_list += ["CFG_NB_PRF=%s" % (env['NBPRF'])]
+    
+    #-----------------------------------------------------------
+    # Prepare module build
+    #-----------------------------------------------------------
+    scutils.module_build_prep(env, module_path, prf_src_dir, prf_def_list, prf_inc_list, prf_src_list)

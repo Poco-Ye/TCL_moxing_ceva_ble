@@ -1,0 +1,47 @@
+########################################################################################
+#
+# @file SCompile
+#
+# @brief Compilation instructions for Application Host Interface 
+#
+# Copyright (C) RivieraWaves 2019-2020
+#
+#########################################################################################
+
+# Check that BLE host is present
+env['AHITL'] = 'on' if (env['AHITL'] == 'on') and (env['BLE_HOST_PRESENT'] == "on") else 'off'
+    
+if (env['AHITL'] == 'on'):
+    
+    #-----------------------------------------------------------
+    # Paths
+    #-----------------------------------------------------------
+    
+    ahi_src_dir = os.path.join(ahi_dir, 'src')
+    ahi_cfg_dir = os.path.join(ahi_dir, 'config')
+    ahi_api_dir = os.path.join(ahi_dir, 'api')
+    ahi_inc_dir = os.path.join(ahi_dir, 'inc')
+    
+    #-----------------------------------------------------------
+    # Compilation Flags
+    #-----------------------------------------------------------
+    ahi_def_list  = []
+    ahi_def_list += ['CFG_AHITL']
+    
+    
+    #-----------------------------------------------------------
+    # Include List
+    #-----------------------------------------------------------
+    ahi_inc_list  = []
+    ahi_inc_list += [join(ahi_dir, 'api')]
+    
+    #-----------------------------------------------------------
+    # Source List
+    #-----------------------------------------------------------
+    ahi_src_list = scutils.file_list_read(env, os.path.join(ahi_cfg_dir, 'sourcelist.txt'), "")
+
+    #-----------------------------------------------------------
+    # Prepare module build
+    #-----------------------------------------------------------
+    scutils.module_build_prep(env, module_path, ahi_src_dir, ahi_def_list, ahi_inc_list, ahi_src_list)
+

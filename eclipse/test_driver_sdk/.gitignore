@@ -1,0 +1,12 @@
+/Debug/
+/Debug_ram/
+/Debug_flash/
+/Debug_test_dma/
+/Debug_test_uart1/
+/Debug_test_audio_adc/
+/Debug_test_uart0/
+/Debug_test_flash/
+/Debug_test_uart2/
+/Debug_test_pwr/
+/Debug_test_pinmux/
+/Debug_test_gpio/

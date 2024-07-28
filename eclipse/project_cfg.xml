@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdtprojectproperties>
+<section name="org.eclipse.cdt.internal.ui.wizards.settingswizards.IncludePaths">
+<language name="Assembly Source File">
+<includepath>../../components/unity/include</includepath>
+<includepath>../../components/unity/unity/src</includepath>
+<includepath>../../components/platform/soc</includepath>
+<includepath>../../components/platform/soc/flash</includepath>
+<includepath>../../components/platform/soc/ble_soc_xxx</includepath>
+<includepath>../../components/platform/peripheral</includepath>
+<includepath>../../components/platform/arch/ble_soc_xxx/include/nv307</includepath>
+<includepath>../../components/platform/arch/ble_soc_xxx/include</includepath>
+
+</language>
+<language name="C Source File">
+<includepath>../../components/unity/include</includepath>
+<includepath>../../components/unity/unity/src</includepath>
+<includepath>../../components/platform/soc</includepath>
+<includepath>../../components/platform/soc/flash</includepath>
+<includepath>../../components/platform/soc/ble_soc_xxx</includepath>
+<includepath>../../components/platform/peripheral</includepath>
+<includepath>../../components/platform/arch/ble_soc_xxx/include</includepath>
+<includepath>../../components/platform/arch/ble_soc_xxx/include/nv307</includepath>
+
+</language>
+<language name="C++ Source File">
+<includepath>../../components/unity/include</includepath>
+<includepath>../../components/unity/unity/src</includepath>
+<includepath>../../components/platform/soc</includepath>
+<includepath>../../components/platform/soc/flash</includepath>
+<includepath>../../components/platform/soc/ble_soc_xxx</includepath>
+<includepath>../../components/platform/peripheral</includepath>
+<includepath>../../components/platform/arch/ble_soc_xxx/include/nv307</includepath>
+<includepath>../../components/plantform/arch/ble_soc_xxx/include</includepath>
+
+</language>
+<language name="Object File">
+
+</language>
+</section>
+<section name="org.eclipse.cdt.internal.ui.wizards.settingswizards.Macros">
+<language name="Assembly Source File">
+<macro>
+<name>DOWNLOAD_MODE</name><value>DOWNLOAD_MODE_ILM</value>
+</macro>
+
+</language>
+<language name="C Source File">
+<macro>
+<name>DOWNLOAD_MODE</name><value>DOWNLOAD_MODE_ILM</value>
+</macro>
+
+</language>
+<language name="C++ Source File">
+<macro>
+<name>DOWNLOAD_MODE</name><value>DOWNLOAD_MODE_ILM</value>
+</macro>
+
+</language>
+<language name="Object File">
+
+</language>
+</section>
+</cdtprojectproperties>

@@ -1,0 +1,42 @@
+﻿@startuml
+ 
+title Audio ADC 驱动交互处理方案
+ 
+skinparam ParticipantPadding 10
+skinparam BoxPadding 10
+ 
+actor user
+ 
+== 初始化流程  ==
+ 
+user->ms_audio_adc: ms_audio_adc_init
+	activate ms_audio_adc
+	note over ms_audio_adc, ms_audio_adc_hal: initial audio adc parameters.
+	note over ms_audio_adc, ms_single_dma: initial dma  parameters.
+	ms_audio_adc->ms_audio_adc: ms_audio_adc_init_buffer()
+		activate ms_audio_adc
+		ms_audio_adc->ms_queue: ms_queue_init_pool()
+		note right: initial a full free queue.
+		ms_audio_adc->ms_queue: ms_queue_init()
+		note right: initial a empty used queue.
+	deactivate ms_audio_adc
+	deactivate ms_audio_adc
+user->ms_audio_adc:ms_audio_adc_start_dma_xfer()
+	activate ms_audio_adc
+	ms_audio_adc->ms_queue: ms_queue_pop_front(&queue_buf->free_list)
+	ms_audio_adc->ms_single_dma: ms_dmac_start_chx_xfer_it()
+	deactivate ms_audio_adc
+== DMA transmission done中断流程  ==	
+ms_single_dma->ms_audio_adc:ms_audio_adc_dma_xfer_tft_callback()
+	activate ms_audio_adc
+	ms_audio_adc->ms_queue:ms_queue_push_back(&queue_buf->used_list, (QueueItem_Type*) item);
+	ms_audio_adc->ms_queue:ms_queue_pop_front(&queue_buf->free_list);
+	ms_audio_adc->ms_single_dma: ms_dmac_start_chx_xfer_it()
+	deactivate ms_audio_adc
+== 获取数据流程 ==
+user->ms_audio_adc : ms_audio_adc_pop_data_item()
+return pointer of data item
+note over user : proccess the return data item.
+user->ms_audio_adc : ms_audio_adc_push_to_free_queue()
+note right: push the data item pointer to free queue after proccess.
+@enduml

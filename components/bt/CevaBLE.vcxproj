@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ip\host\profiles\hogp\api\hids.h" />
+    <ClInclude Include="ip\ll\ble\api\em_map_ble.h" />
+    <ClInclude Include="ip\ll\ble\api\rwble.h" />
+    <ClInclude Include="ip\ll\ble\api\rwble_config.h" />
+    <ClInclude Include="ip\ll\ble\src\ble_util.h" />
+    <ClInclude Include="ip\ll\ble\src\ble_util_buf.h" />
+    <ClInclude Include="ip\ll\ble\src\llc.h" />
+    <ClInclude Include="ip\ll\ble\src\llc\llc_int.h" />
+    <ClInclude Include="ip\ll\ble\src\llc\llc_llcp.h" />
+    <ClInclude Include="ip\ll\ble\src\lld.h" />
+    <ClInclude Include="ip\ll\ble\src\lld\lld_int.h" />
+    <ClInclude Include="ip\ll\ble\src\lld\lld_int_iso.h" />
+    <ClInclude Include="ip\ll\ble\src\lli.h" />
+    <ClInclude Include="ip\ll\ble\src\llm.h" />
+    <ClInclude Include="ip\ll\ble\src\llm\llm_int.h" />
+    <ClInclude Include="ip\ll\em\api\em_map.h" />
+    <ClInclude Include="ip\ll\sch\api\sch_alarm.h" />
+    <ClInclude Include="ip\ll\sch\api\sch_arb.h" />
+    <ClInclude Include="ip\ll\sch\api\sch_plan.h" />
+    <ClInclude Include="ip\ll\sch\api\sch_prog.h" />
+    <ClInclude Include="ip\ll\sch\api\sch_slice.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ip\ll\ble\src\co\ble_util.c" />
+    <ClCompile Include="ip\ll\ble\src\co\ble_util_buf.c" />
+    <ClCompile Include="ip\ll\ble\src\co\rwble.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_chmap_upd.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_cis.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_clk_acc.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_con_upd.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_cte.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_dbg.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_disconnect.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_dl_upd.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_encrypt.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_feat_exch.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_hci.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_le_ping.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_llcp.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_past.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_phy_upd.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_pwr.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_task.c" />
+    <ClCompile Include="ip\ll\ble\src\llc\llc_ver_exch.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld_adv.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld_bi.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld_ch_scan.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld_ci.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld_con.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld_init.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld_iso.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld_isoal.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld_per_adv.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld_scan.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld_sync.c" />
+    <ClCompile Include="ip\ll\ble\src\lld\lld_test.c" />
+    <ClCompile Include="ip\ll\ble\src\llm\llm.c" />
+    <ClCompile Include="ip\ll\ble\src\llm\llm_adv.c" />
+    <ClCompile Include="ip\ll\ble\src\llm\llm_ch_scan.c" />
+    <ClCompile Include="ip\ll\ble\src\llm\llm_hci.c" />
+    <ClCompile Include="ip\ll\ble\src\llm\llm_init.c" />
+    <ClCompile Include="ip\ll\ble\src\llm\llm_scan.c" />
+    <ClCompile Include="ip\ll\ble\src\llm\llm_task.c" />
+    <ClCompile Include="ip\ll\ble\src\llm\llm_test.c" />
+    <ClCompile Include="ip\ll\sch\src\sch_alarm.c" />
+    <ClCompile Include="ip\ll\sch\src\sch_arb.c" />
+    <ClCompile Include="ip\ll\sch\src\sch_plan.c" />
+    <ClCompile Include="ip\ll\sch\src\sch_prog.c" />
+    <ClCompile Include="ip\ll\sch\src\sch_slice.c" />
+    <ClCompile Include="vtPatch\JumpTable.c" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7C540F99-61E2-4542-92AF-17337E5F50A3}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>CevaBLE</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;BT_SUPPORT;CFG_ACT=12;CFG_ALLROLES;CFG_APP;CFG_APP_DIS;CFG_APP_HID;CFG_APP_PRF;CFG_APP_SEC;CFG_ATT_VAL_MAX=2048;CFG_BLE_EMB;CFG_BLE_HOST;CFG_CON=10;CFG_GAIA;CFG_GATT_CLI;CFG_GPIO;CFG_HL_MSG_API;CFG_HOST_KEY_MGR;CFG_ISO_CON=3;CFG_L2CAP_CHAN_IN_ENV_NB=20;CFG_L2CAP_COC_CHAN_PER_CON_NB=10;CFG_LE_PWR_CTRL;CFG_MAX_LE_MTU=2048;CFG_MODEM_LR;CFG_NB_PRF=10;CFG_PRF;CFG_PRF_BASS;CFG_PRF_DISS;CFG_PRF_HOGPD;CFG_RAL=3;CFG_RF_XRC443;CFG_ROM_VT;CFG_ROM_VT_IMPORT;CFG_STATIC;FREERTOS_SUPPORT;cpu_zeroriscy</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <OpenMPSupport>true</OpenMPSupport>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>$(ProjectDir)plf\win32;$(ProjectDir)ip\inc;$(ProjectDir)ip\ll\ble\src;$(ProjectDir)ip\ll\ble\api;$(ProjectDir)ip\ll\em\api;$(ProjectDir)ip\ll\sch\api;$(ProjectDir)ip\ll\data_path;$(ProjectDir)ip\hci\api;$(ProjectDir)ip\host\hl\inc;$(ProjectDir)ip\host\hl\api;$(ProjectDir)ip\host\hl\src\gap\gapc;$(ProjectDir)ip\host\profiles\dis\api;$(ProjectDir)ip\host\profiles\bas\api;$(ProjectDir)ip\host\profiles\hogp\api;$(ProjectDir)ip\host\ahi\api;$(ProjectDir)modules\security\api;$(ProjectDir)modules\common\api;$(ProjectDir)modules\dbg\api;$(ProjectDir)modules\h4tl\api;$(ProjectDir)modules\ke\api;$(ProjectDir)modules\rf\api;$(ProjectDir)modules\rwip\api;$(ProjectDir)plf\include;$(ProjectDir)app</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;WIN32</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

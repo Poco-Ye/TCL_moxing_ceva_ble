@@ -1,0 +1,9 @@
+ #***************************************************************************************
+ # @brief This file lists up all the source code that will be
+ #        compiled and built for YXML Library
+ #
+ # Copyright (C) RivieraWaves 2009-2021
+ #
+ #***************************************************************************************
+
+    yxml.c

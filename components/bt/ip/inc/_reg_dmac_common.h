@@ -1,0 +1,10 @@
+#ifndef __REG_DMAC_COMMON_H_
+#define __REG_DMAC_COMMON_H_
+
+#define REG_DMAC_COMMON_SIZE 16
+
+#define REG_DMAC_COMMON_BASE_ADDR 0x00408000
+
+
+#endif // __REG_DMAC_COMMON_H_
+

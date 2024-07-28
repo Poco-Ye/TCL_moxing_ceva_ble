@@ -1,0 +1,56 @@
+@startuml
+ 
+title KeyScan 驱动交互处理方案
+ 
+skinparam ParticipantPadding 10
+skinparam BoxPadding 10
+ 
+actor user
+ 
+== keyscan 初始化流程  ==
+ 
+user->ms_keyscan: ms_keyscan_init()
+	activate ms_keyscan
+	note over ms_keyscan, ms_keyscan_hal: initial keyscan parameters.
+	note over ms_keyscan, ms_keyscan_hal: register key_interrupt_callback function.
+	ms_keyscan->XXX_evb_boad: ms_keyscan_gpio_init()
+	    note right: key scan gpio init according to each evb board
+		activate ms_keyscan	
+		ms_keyscan->ms_keyscan_hal: ms_keyscan_hal_enable_clk()
+		note right: enable keyscan clock.
+		ms_keyscan->ms_keyscan_hal: ms_keyscan_hal_enable_module()
+		note right: enable keyscan module.	
+		ms_keyscan->ms_keyscan_hal: other default init		
+	deactivate ms_keyscan
+	
+user->ms_keyscan: ms_keyscan_intrrupt_enable()
+	activate ms_keyscan
+	ms_keyscan->ms_keyscan_hal: ms_keyscan_hal_enable_cpu_int()
+	ms_keyscan->ms_keyscan_hal: ms_keyscan_hal_disable_cpu_int()
+	deactivate ms_keyscan	
+	
+
+user->ms_keyscan: ms_HWdebouce_enable()
+	activate ms_keyscan
+	ms_keyscan->ms_keyscan_hal: ms_keyscan_hal_enable_debounce()
+	ms_keyscan->ms_keyscan_hal: ms_keyscan_hal_disable_debounce()
+	deactivate ms_keyscan
+	
+user->ms_keyscan: ms_keyscan_config()
+	activate ms_keyscan
+	ms_keyscan->ms_keyscan_hal: all other configure parameters
+	deactivate ms_keyscan
+
+	
+== key scan中断流程  ==	
+keyscan_interupt_handler->ms_keyscan
+	activate ms_keyscan
+	keyscan_interupt_handler->ms_keyscan:ms_keypad_readfifo()
+	keyscan_interupt_handler->ms_keyscan:check intterupt resource
+	keyscan_interupt_handler->XXX_evb_boad:ms_get_keyValue()	
+	keyscan_interupt_handler->ms_keyscan:ms_keypad_multikey_pprocess()
+    keyscan_interupt_handler->XXX_evb_boad:get_combinedkey()
+	keyscan_interupt_handler->user:keypad_callback() //optional	 
+	deactivate ms_keyscan
+	
+@enduml

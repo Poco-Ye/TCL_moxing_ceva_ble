@@ -1,0 +1,10 @@
+#ifndef __REG_DMAC_CHANNEL_H_
+#define __REG_DMAC_CHANNEL_H_
+
+#define REG_DMAC_CHANNEL_SIZE 32
+
+#define REG_DMAC_CHANNEL_BASE_ADDR 0x00408100
+
+
+#endif // __REG_DMAC_CHANNEL_H_
+

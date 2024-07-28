@@ -1,0 +1,10 @@
+#ifndef __REG_ROMCORE_H_
+#define __REG_ROMCORE_H_
+
+#define REG_ROMCORE_SIZE 188
+
+#define REG_ROMCORE_BASE_ADDR 0x00320000
+
+
+#endif // __REG_ROMCORE_H_
+

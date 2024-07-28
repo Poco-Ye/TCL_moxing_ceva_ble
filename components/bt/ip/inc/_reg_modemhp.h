@@ -1,0 +1,10 @@
+#ifndef __REG_MODEMHP_H_
+#define __REG_MODEMHP_H_
+
+#define REG_MODEMHP_SIZE 228
+
+#define REG_MODEMHP_BASE_ADDR 0x21020000
+
+
+#endif // __REG_MODEMHP_H_
+

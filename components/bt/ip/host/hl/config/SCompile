@@ -1,0 +1,77 @@
+########################################################################################
+#
+# @file SCompile
+#
+# @brief Compilation instructions for Host 
+#
+# Copyright (C) RivieraWaves 2019-2020
+#
+#########################################################################################
+
+try:
+    HOST_PRESENT = True if ("-full" in product) or ("-splithost" in product) else False
+    BLE_HOST_PRESENT = True if HOST_PRESENT and (("ble-" in product) or ("btdm-" in product)) and (product != "btdm-full-bt") else False
+    env['BLE_HOST_PRESENT'] = "on" if BLE_HOST_PRESENT else "off"
+    env['BT_HOST_PRESENT'] = "on" if HOST_PRESENT and (("bt-" in product) or ("btdm-" in product)) and (product != "btdm-full-le") else "off" 
+except: 
+    BLE_HOST_PRESENT = False
+
+    
+if (HOST_PRESENT):
+    
+    #-----------------------------------------------------------
+    # Paths
+    #-----------------------------------------------------------
+    
+    hl_src_dir = os.path.join(hl_dir, 'src')
+    hl_cfg_dir = os.path.join(hl_dir, 'config')
+    hl_api_dir = os.path.join(hl_dir, 'api')
+    hl_inc_dir = os.path.join(hl_dir, 'inc')
+    
+    #-----------------------------------------------------------
+    # Compilation Flags
+    #-----------------------------------------------------------
+    hl_def_list  = []
+    if(env['BLE_HOST_PRESENT'] == "on"):
+	    hl_def_list += ['CFG_BLE_HOST']
+    if env['BT_HOST_PRESENT'] == "on" :
+        hl_def_list += ['CFG_BT_HOST']
+    
+    # Maximum number of connections
+    hl_def_list += ['CFG_CON=' + env['CON']]
+    
+    # External attribute database management
+    if env['HL_MSG_API'] == 'on':
+        hl_def_list += ['CFG_HL_MSG_API']
+    
+    # protocols and profiles
+    if (env['BLE_HOST_PRESENT'] == "on") and (env['GATT_CLI'] == 'on'):
+        hl_def_list += ['CFG_GATT_CLI']
+    
+    if (env['BLE_HOST_PRESENT'] == "on"):
+        hl_def_list += ['CFG_MAX_LE_MTU=%s'%env['MAX_LE_MTU']]
+        hl_def_list += ['CFG_ATT_VAL_MAX=%s'%env['ATT_VAL_MAX']]
+        hl_def_list += ['CFG_L2CAP_COC_CHAN_PER_CON_NB=%s'%env['L2CAP_COC_CHAN_PER_CON_NB']]
+        hl_def_list += ['CFG_L2CAP_CHAN_IN_ENV_NB=%s'%env['L2CAP_CHAN_IN_ENV_NB']]
+        
+    if (env['HOST_TEST_MODE'] == 'on'):
+        hl_def_list += ['CFG_HOST_TEST_MODE']
+    
+    
+    #-----------------------------------------------------------
+    # Include List
+    #-----------------------------------------------------------
+    hl_inc_list  = []
+    hl_inc_list += scutils.file_list_read(env, os.path.join(hl_cfg_dir, 'includelist.txt'), hl_api_dir)
+    hl_inc_list += [join(hl_dir, 'inc')]
+    hl_inc_list += [join(hl_dir, 'api')]
+    
+    #-----------------------------------------------------------
+    # Source List
+    #-----------------------------------------------------------
+    hl_src_list = scutils.file_list_read(env, os.path.join(hl_cfg_dir, 'sourcelist.txt'), "")
+    
+    #-----------------------------------------------------------
+    # Prepare module build
+    #-----------------------------------------------------------
+    scutils.module_build_prep(env, module_path, hl_src_dir, hl_def_list, hl_inc_list, hl_src_list)

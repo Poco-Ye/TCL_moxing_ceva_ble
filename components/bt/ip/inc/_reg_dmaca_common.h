@@ -1,0 +1,10 @@
+#ifndef __REG_DMACA_COMMON_H_
+#define __REG_DMACA_COMMON_H_
+
+#define REG_DMACA_COMMON_SIZE 16
+
+#define REG_DMACA_COMMON_BASE_ADDR 0x0040B000
+
+
+#endif // __REG_DMACA_COMMON_H_
+

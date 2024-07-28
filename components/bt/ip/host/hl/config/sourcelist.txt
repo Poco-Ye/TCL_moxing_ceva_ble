@@ -1,0 +1,124 @@
+ #***************************************************************************************
+ # @file sourcelist.txt
+ #
+ # @brief This file lists up all the source code that will be
+ #        compiled and built for the RWBLE SW IP. 
+ #
+ # Copyright (C) RivieraWaves 2009-2015
+ #
+ #***************************************************************************************
+    
+###############################################################################
+# Host: 
+###############################################################################
+    hl/hl.c
+    hl/hl_hci.c
+    hl/hl_proc.c
+    
+###############################################################################
+# gap: generic access profile
+###############################################################################
+    gap/gapm/gapm.c
+    gap/gapm/gapm_proc.c
+    gap/gapm/gapm_cfg.c
+    gap/gapm/gapm_info.c
+    gap/gapm/gapm_actv.c
+    gap/gapm/gapm_msg.c
+    
+#if (env['BLE_HOST_PRESENT'] == "on")
+    gap/gapm/gapm_le_test.c
+    gap/gapm/gapm_list.c
+    gap/gapm/gapm_smp.c
+    gap/gapm/gapm_adv.c
+    gap/gapm/gapm_scan.c
+    gap/gapm/gapm_init.c
+    gap/gapm/gapm_per_sync.c
+    gap/gapm/gapm_le_actv.c
+#endif // (env['BLE_HOST_PRESENT'] == "on")
+
+#if (env['BT_HOST_PRESENT'] == "on")
+    gap/gapm/gapm_bt_actv.c
+    gap/gapm/gapm_inquiry.c
+    gap/gapm/gapm_inquiry_scan.c
+    gap/gapm/gapm_page.c
+    gap/gapm/gapm_page_scan.c
+    gap/gapm/gapm_bt_sec.c
+    gap/gapm/gapm_bt_test.c
+    gap/gapm/gapm_bt_sdp.c
+#endif // (env['BT_HOST_PRESENT'] == "on") 
+
+    gap/gapc/gapc.c
+    gap/gapc/gapc_msg.c
+    gap/gapc/gapc_proc.c
+    gap/gapc/gapc_sdt.c
+    gap/gapc/gapc_disconnect.c
+    gap/gapc/gapc_info.c
+    gap/gapc/gapc_ping.c
+    
+#if (env['BLE_HOST_PRESENT'] == "on")
+    gap/gapc/gapc_le_con.c
+    gap/gapc/gapc_le_con_up.c
+    gap/gapc/gapc_le_phy.c
+    gap/gapc/gapc_le_dle.c
+    gap/gapc/gapc_le_past.c
+    gap/gapc/gapc_le_cte.c
+    gap/gapc/gapc_le_pwr_ctrl.c
+    gap/gapc/gapc_svc.c
+    gap/gapc/gapc_cli.c
+    
+    gap/gapc/gapc_le_smp_encrypt.c
+    gap/gapc/gapc_le_smp_key_exch.c
+    gap/gapc/gapc_le_smp_legacy.c
+    gap/gapc/gapc_le_smp_pdu.c
+    gap/gapc/gapc_le_smp_sc.c
+    gap/gapc/gapc_le_smp.c
+#endif // (env['BLE_HOST_PRESENT'] == "on")
+
+#if (env['BT_HOST_PRESENT'] == "on")
+    gap/gapc/gapc_bt_con.c
+    gap/gapc/gapc_bt_sec.c
+#endif // (env['BT_HOST_PRESENT'] == "on") 
+
+###############################################################################
+# l2cap: 
+###############################################################################
+#if (env['BLE_HOST_PRESENT'] == "on")
+    l2cap/l2cap.c
+    l2cap/l2cap_chan.c
+    l2cap/l2cap_chan_tx.c
+    l2cap/l2cap_chan_rx.c
+    l2cap/l2cap_coc.c
+    l2cap/l2cap_msg.c
+    l2cap/l2cap_sig.c
+#endif // (env['BLE_HOST_PRESENT'] == "on")
+#if (env['BLE_HOST_PRESENT'] == "on") and (env['BT_HOST_PRESENT'] == "on")
+    l2cap/l2cap_chan_bt.c
+#endif (env['BLE_HOST_PRESENT'] == "on") and (env['BT_HOST_PRESENT'] == "on")
+    
+###############################################################################
+# gatt: generic attribute profile
+###############################################################################
+#if (env['BLE_HOST_PRESENT'] == "on")
+    gatt/gatt.c
+    gatt/gatt_user.c
+    gatt/gatt_db.c
+    gatt/gatt_bearer.c
+    gatt/gatt_proc.c
+    gatt/gatt_msg.c
+    gatt/gatt_cli_mtu_exch.c
+    gatt/gatt_cli_read.c
+    gatt/gatt_cli_write.c
+    gatt/gatt_cli_discover.c
+    gatt/gatt_cli_event.c
+    gatt/gatt_srv_mtu_exch.c
+    gatt/gatt_srv_write.c
+    gatt/gatt_srv_read.c
+    gatt/gatt_srv_discover.c
+    gatt/gatt_srv_event.c
+#endif // (env['BLE_HOST_PRESENT'] == "on")
+    
+###############################################################################
+# prf: Profile API
+###############################################################################
+    prf/prf.c
+    prf/prf_utils.c

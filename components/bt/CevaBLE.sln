@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CevaBLE", "CevaBLE.vcxproj", "{7C540F99-61E2-4542-92AF-17337E5F50A3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WinBLE", "WinBLE\WinBLE.vcxproj", "{8CFCD619-7747-47F6-B69C-28266FA4484D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{20B9B189-0E6A-4D86-8942-8945ECF35146} = {20B9B189-0E6A-4D86-8942-8945ECF35146}
+		{7C540F99-61E2-4542-92AF-17337E5F50A3} = {7C540F99-61E2-4542-92AF-17337E5F50A3}
+		{CB9795BA-24F4-4654-9B60-79842539E983} = {CB9795BA-24F4-4654-9B60-79842539E983}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LiveImportAPI", "LiveImportAPI\LiveImportAPI.vcxproj", "{CB9795BA-24F4-4654-9B60-79842539E983}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CevaHost", "CevaHost.vcxproj", "{20B9B189-0E6A-4D86-8942-8945ECF35146}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C540F99-61E2-4542-92AF-17337E5F50A3}.Debug|x64.ActiveCfg = Debug|x64
+		{7C540F99-61E2-4542-92AF-17337E5F50A3}.Debug|x64.Build.0 = Debug|x64
+		{7C540F99-61E2-4542-92AF-17337E5F50A3}.Debug|x86.ActiveCfg = Debug|Win32
+		{7C540F99-61E2-4542-92AF-17337E5F50A3}.Debug|x86.Build.0 = Debug|Win32
+		{7C540F99-61E2-4542-92AF-17337E5F50A3}.Release|x64.ActiveCfg = Release|x64
+		{7C540F99-61E2-4542-92AF-17337E5F50A3}.Release|x64.Build.0 = Release|x64
+		{7C540F99-61E2-4542-92AF-17337E5F50A3}.Release|x86.ActiveCfg = Release|Win32
+		{7C540F99-61E2-4542-92AF-17337E5F50A3}.Release|x86.Build.0 = Release|Win32
+		{8CFCD619-7747-47F6-B69C-28266FA4484D}.Debug|x64.ActiveCfg = Debug|x64
+		{8CFCD619-7747-47F6-B69C-28266FA4484D}.Debug|x64.Build.0 = Debug|x64
+		{8CFCD619-7747-47F6-B69C-28266FA4484D}.Debug|x86.ActiveCfg = Debug|Win32
+		{8CFCD619-7747-47F6-B69C-28266FA4484D}.Debug|x86.Build.0 = Debug|Win32
+		{8CFCD619-7747-47F6-B69C-28266FA4484D}.Release|x64.ActiveCfg = Release|x64
+		{8CFCD619-7747-47F6-B69C-28266FA4484D}.Release|x64.Build.0 = Release|x64
+		{8CFCD619-7747-47F6-B69C-28266FA4484D}.Release|x86.ActiveCfg = Release|Win32
+		{8CFCD619-7747-47F6-B69C-28266FA4484D}.Release|x86.Build.0 = Release|Win32
+		{CB9795BA-24F4-4654-9B60-79842539E983}.Debug|x64.ActiveCfg = Debug|x64
+		{CB9795BA-24F4-4654-9B60-79842539E983}.Debug|x64.Build.0 = Debug|x64
+		{CB9795BA-24F4-4654-9B60-79842539E983}.Debug|x86.ActiveCfg = Debug|Win32
+		{CB9795BA-24F4-4654-9B60-79842539E983}.Debug|x86.Build.0 = Debug|Win32
+		{CB9795BA-24F4-4654-9B60-79842539E983}.Release|x64.ActiveCfg = Release|x64
+		{CB9795BA-24F4-4654-9B60-79842539E983}.Release|x64.Build.0 = Release|x64
+		{CB9795BA-24F4-4654-9B60-79842539E983}.Release|x86.ActiveCfg = Release|Win32
+		{CB9795BA-24F4-4654-9B60-79842539E983}.Release|x86.Build.0 = Release|Win32
+		{20B9B189-0E6A-4D86-8942-8945ECF35146}.Debug|x64.ActiveCfg = Debug|x64
+		{20B9B189-0E6A-4D86-8942-8945ECF35146}.Debug|x64.Build.0 = Debug|x64
+		{20B9B189-0E6A-4D86-8942-8945ECF35146}.Debug|x86.ActiveCfg = Debug|Win32
+		{20B9B189-0E6A-4D86-8942-8945ECF35146}.Debug|x86.Build.0 = Debug|Win32
+		{20B9B189-0E6A-4D86-8942-8945ECF35146}.Release|x64.ActiveCfg = Release|x64
+		{20B9B189-0E6A-4D86-8942-8945ECF35146}.Release|x64.Build.0 = Release|x64
+		{20B9B189-0E6A-4D86-8942-8945ECF35146}.Release|x86.ActiveCfg = Release|Win32
+		{20B9B189-0E6A-4D86-8942-8945ECF35146}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

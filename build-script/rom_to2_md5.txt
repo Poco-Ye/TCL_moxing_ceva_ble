@@ -1,0 +1,11 @@
+e0ff1054e9f147285921246e38074c16 *test_ble_sdk_rom.bin
+a9689c4fc5bfa330c23e31243f8517f6 *rom.bin
+a801273c1a36e864658d4bce85ad1940 *rom.hex
+783a9ad177e350278c036c5b96e05c1e *rom_part0.bin
+bb1e24e5bd2dd21ad5a6f2ffb6bf30b7 *rom_part0.hex
+5c5d8118f7af3857ec9491194d12dff2 *rom_part1.bin
+b2ecf5a7e8f343934d0eec9ffbc75f4f *rom_part1.hex
+695553786a99039ec5b8bcec4d36bb2f *rom_part2.bin
+65526da856ba06eb1747b0769cd21a55 *rom_part2.hex
+5ab1af620d0d29471e8c11d5c88e5558 *rom_part3.bin
+ae1a889cfa42191c334fa79ada869fbb *rom_part3.hex
